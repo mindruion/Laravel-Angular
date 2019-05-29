@@ -1,0 +1,48 @@
+.logo{
+  z-index: 3;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #63000a;
+  letter-spacing: 4px;
+  outline:none;
+  cursor: pointer;
+}
+.nav-item::after{
+  content: '';
+  display: block;
+  width:0px;
+  height:2px;
+  background:#63000a;
+  transition: 0.2s;
+}
+.nav-item:hover::after{
+  width:80%;
+}
+.nav-link{
+  padding:15px 5px;
+  transition:0.2s;}
+a {
+  color: white;
+}
+a.nav-link.active{
+  color: #96000d;
+}
+a:hover{
+  color: #63000a;
+}
+
+.nav-item{
+  margin-left: 40px;
+  letter-spacing: 4px;
+}
+i{
+  margin-right: 8px;
+  color: #63000a;
+}
+.size{
+  font-size: 25px;
+}
+

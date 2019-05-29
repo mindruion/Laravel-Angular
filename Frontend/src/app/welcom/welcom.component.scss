@@ -1,0 +1,78 @@
+@for $i from 1 through 100{
+  $t: random(700) + px;
+  $r: random(900) + px;
+  $l: random(900) + px;
+
+  .point-#{$i} {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.59);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    -webkit-animation: movee-#{$i} 5s infinite;
+    animation: movee-#{$i} 30s infinite;
+  }
+    @keyframes movee-#{$i}{
+      0% {
+      transform: rotate(random(360) + deg) translate(random(150) + px);
+        top: $t;
+        @if $i <= 50{
+        right: $r;
+        }
+        @else {
+          left: $l;
+        }
+        opacity: 0;
+      }
+      5%{
+        opacity: 1;
+      }
+      25% {
+        transform: rotate(random(360) + deg) translate(random(150) + px);
+        top: random(700) + px;
+        @if $i <= 50{
+          right: random(900) + px;
+        }
+        @else {
+          left: random(900) + px;
+        }
+        opacity: 1;
+      }
+      50%{
+        top: random(700) + px;
+        @if $i <= 50{
+          right: random(900) + px;
+        }
+        @else {
+          left: random(900) + px;
+        }
+        transform: rotate(random(360) + deg) translate(random(100) + px);
+        opacity: 1;
+      }
+      75% {
+        transform: rotate(360deg) translate(random(100) + px);
+        top: random(700) + px;
+        @if $i <= 50{
+          right: random(900) + px;
+        }
+        @else {
+          left: random(900) + px;
+        }
+        opacity: 1;
+
+      }
+      100% {
+        top: $t;
+        @if $i <= 50{
+          right: $r;
+        }
+        @else {
+          left: $l;
+        }
+opacity: 0;
+      }
+  }
+}
+.container{
+  width: 100%;
+}

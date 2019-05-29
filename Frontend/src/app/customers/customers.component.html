@@ -1,0 +1,56 @@
+<div class="containter">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 ml-auto mr-auto">
+      <div class="card-header">
+        <i class="fas fa-male Customer"></i>Customers
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr class="design">
+                <th class="text-center border-0">#</th>
+                <th class="border-0">Name</th>
+                <th class="border-0">Company</th>
+                <th class="border-0">Domain</th>
+                <th class=" border-0" >Email</th>
+                <th class=" border-0">Phone</th>
+                <th class="text-right border-0">Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let customer of customers.data; let int = index" class="design2">
+                <td class="text-center">{{int + 1}}</td>
+                <td>{{customer.full_name}}</td>
+                <td>{{customer.company}}</td>
+                <td>{{customer.domain}}</td>
+                <td >{{customer.email}}</td>
+                <td >{{customer.phone}}</td>
+                <td class="td-actions text-right">
+                  <button type="button" class="border-0 btn edit btn-just-icon btn-sm" data-toggle="modal" data-target="#myModal" (click)="getNumber(customer.id)">
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
+                  <app-edit-customers [editNumber]="number" ></app-edit-customers>
+                  <button type="button" rel="tooltip" class="btn delete btn-just-icon btn-sm " (click)="onDelete(customer.id, int)">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      </div>
+
+        <ul class="pagination-custom text-right">
+          <li class="pag-link"><a (click)="onClick(customers?.meta?.pagination?.current_page - 1)"><i class="fa fa-angle-double-left"></i></a></li>
+          <li class="pag-link" *ngFor="let item of createRange(customers?.meta?.pagination?.total_pages); let i = index">
+            <a (click)="onClick(i + 1)">{{i + 1}}</a></li>
+          <li class="pag-link"><a (click)="onClick(customers?.meta?.pagination?.current_page + 1)"><i class="fa fa-angle-double-right"></i></a></li>
+        </ul>
+</div>
+</div>
+</div>
+
+

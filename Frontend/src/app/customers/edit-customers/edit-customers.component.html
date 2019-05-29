@@ -1,0 +1,38 @@
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Customer</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="finish"><i class="far fa-times-circle"></i></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="editedCustomer">
+          <div class="input-group form-group">
+            <label for="full_name"></label>
+          <input type="text" placeholder="Name" id="full_name" formControlName="full_name" class="form-control">
+        </div>
+          <div class="input-group form-group">
+            <label for="company"></label>
+            <input type="text" placeholder="Company" id="company" formControlName="company" class="form-control">
+          </div>
+          <div class="input-group form-group">
+            <label for="domain"></label>
+            <input type="text" placeholder="Domain" id="domain" formControlName="domain" class="form-control">
+          </div>
+          <div class="input-group form-group">
+            <label for="email"></label>
+            <input type="email" placeholder="Email" id="email" formControlName="email" class="form-control">
+          </div>
+          <div class="input-group form-group">
+            <label for="phone"></label>
+            <input type="tel" placeholder="Phone" id="phone" pattern="[0-9]{9}" formControlName="phone" class="form-control">
+          </div>
+          <div class="form-group margin">
+            <input type="submit" class="btn btn-success" value="Save Data">
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,29 @@
+.navbar {
+  margin-bottom: 0;
+  border: 0;
+  font-size: 15px ;
+  letter-spacing: 4px;
+}
+.nav-item::after{
+  content: '';
+  display: block;
+  width:0px;
+  height:2px;
+  background:#63000a;
+  transition: 0.2s;
+}
+.nav-item:hover::after{
+  width:100%;
+}
+.nav-link{
+  padding:15px 5px;
+  transition:0.2s;}
+a {
+  color: white;
+}
+a.nav-link.active{
+  color: #96000d;
+}
+a:hover{
+  color: #63000a;
+}

@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Register</h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+          <div class="input-group form-group">
+            <div class="input-group-prepend" *ngIf="f.name.valid">
+              <span class="input-group-text" *ngIf="f.name.valid"><i class="fas fa-user"></i></span>
+            </div>
+            <div class="input-group-prepend" id="css3" *ngIf="!f.name.valid">
+              <span class="input-group-text" *ngIf="!f.name.valid"><i class="fas fa-user"></i></span>
+            </div>
+            <label for="Name"></label>
+            <input type="text" id="Name" class="form-control" placeholder="Username" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend" *ngIf="f.email.valid">
+              <span class="input-group-text" *ngIf="f.email.valid"><i class="fas fa-user"></i></span>
+            </div>
+            <div class="input-group-prepend" id="css" *ngIf="!f.email.valid">
+              <span class="input-group-text" *ngIf="!f.email.valid"><i class="fas fa-user"></i></span>
+            </div>
+            <label for="Email"></label>
+            <input type="text" id="Email" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend" *ngIf="f.password.valid">
+              <span class="input-group-text" *ngIf="f.password.valid"><i class="fas fa-key"></i></span>
+            </div>
+            <div class="input-group-prepend" id="css2" *ngIf="!f.password.valid">
+              <span class="input-group-text" *ngIf="!f.password.valid"><i class="fas fa-key"></i></span>
+            </div>
+            <label for="password"></label>
+            <input type="password" id="password" class="form-control" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          </div>
+          <div class="form-group">
+            <input type="submit" [disabled]="!registerForm.valid" value="Register" class="btn float-right register_btn_invalid" *ngIf="!registerForm.valid">
+            <input type="submit" [disabled]="!registerForm.valid" value="Register" class="btn float-right register_btn_valid" *ngIf="registerForm.valid">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
